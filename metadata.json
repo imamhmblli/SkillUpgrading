@@ -1,0 +1,6 @@
+{
+  "name": "SKILLUP - Kursus Interaktif & Bimbingan Mentor",
+  "description": "Tingkatkan kemampuan profesional melalui kursus interaktif, bimbingan mentor, tracking progress belajar, quiz interaktif, dan sertifikasi resmi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
