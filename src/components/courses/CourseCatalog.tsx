@@ -74,7 +74,7 @@ export const CourseCatalog: React.FC = () => {
                 onClick={() => setSelectedLevel(lvl)}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold capitalize transition-colors cursor-pointer ${
                   selectedLevel === lvl
-                    ? 'bg-[#5438FF] text-white shadow-2xs'
+                    ? 'bg-[#2D333F] text-white shadow-2xs font-bold'
                     : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >
@@ -95,7 +95,7 @@ export const CourseCatalog: React.FC = () => {
                 onClick={() => setSelectedStatus(st.id)}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                   selectedStatus === st.id
-                    ? 'bg-[#5438FF] text-white shadow-2xs'
+                    ? 'bg-[#2D333F] text-white shadow-2xs font-bold'
                     : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >

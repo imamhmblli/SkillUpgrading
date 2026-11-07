@@ -33,7 +33,7 @@ export const HomeDashboard: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('kursus')}
-            className="text-xs font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 flex items-center gap-1 group transition-colors cursor-pointer"
+            className="text-xs font-bold text-slate-800 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white flex items-center gap-1 group transition-colors cursor-pointer"
           >
             <span>Lihat Semua</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -91,7 +91,7 @@ export const HomeDashboard: React.FC = () => {
           {/* Mentoring 1-on-1 Quick Card */}
           <div className="bg-white dark:bg-[#101728] rounded-3xl p-6 border border-slate-200 dark:border-[#1E2940] shadow-sm dark:shadow-xl flex flex-col justify-between transition-colors">
             <div className="space-y-2">
-              <div className="w-10 h-10 rounded-2xl bg-[#5438FF] text-white flex items-center justify-center shadow-md shadow-[#5438FF]/30">
+              <div className="w-10 h-10 rounded-2xl bg-[#2D333F] text-white flex items-center justify-center shadow-md shadow-black/20">
                 <Users className="w-5 h-5" />
               </div>
               <h3 className="font-extrabold text-base text-slate-900 dark:text-white leading-snug">
@@ -104,7 +104,7 @@ export const HomeDashboard: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('komunitas')}
-              className="mt-4 w-full py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-indigo-700 dark:bg-[#17223B] dark:hover:bg-[#1E2C4C] border border-slate-200 dark:border-[#273756] dark:text-indigo-300 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+              className="mt-4 w-full py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 dark:text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <span>Jadwalkan Sesi Mentor</span>
               <ArrowRight className="w-3.5 h-3.5" />

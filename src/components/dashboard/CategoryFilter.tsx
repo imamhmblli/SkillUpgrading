@@ -24,7 +24,7 @@ export const CategoryFilter: React.FC = () => {
             onClick={() => setSelectedCategory(cat.id)}
             className={`whitespace-nowrap shrink-0 px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
               isSelected
-                ? 'bg-[#5438FF] text-white shadow-md shadow-[#5438FF]/30'
+                ? 'bg-[#2D333F] text-white shadow-md shadow-black/20 font-bold'
                 : 'bg-white dark:bg-[#101728] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-[#1E2940] hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-[#162035]'
             }`}
           >

@@ -46,16 +46,16 @@ export const MentorHub: React.FC = () => {
   return (
     <div className="space-y-8 pb-12">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-900 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl">
+      <div className="bg-gradient-to-r from-[#242A38] via-[#2F3647] to-[#1E232F] rounded-3xl p-8 text-white relative overflow-hidden shadow-xl border border-slate-700/50">
         <div className="relative z-10 max-w-2xl space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-indigo-200 text-xs font-semibold backdrop-blur-xs">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-slate-200 text-xs font-semibold backdrop-blur-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>Bimbingan 1-on-1 Eksklusif</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Konsultasi Langsung dengan Mentor Industri
           </h2>
-          <p className="text-sm text-indigo-100 leading-relaxed">
+          <p className="text-sm text-slate-200 leading-relaxed">
             Dapatkan arahan karir, code review mendalam, dan simulasi technical interview langsung dari para praktisi senior top tech companies.
           </p>
         </div>
@@ -65,7 +65,7 @@ export const MentorHub: React.FC = () => {
       {mentorBookings.length > 0 && (
         <div className="bg-white dark:bg-[#101728] rounded-3xl p-6 border border-slate-200 dark:border-[#1E2940] shadow-sm dark:shadow-xl transition-colors">
           <h3 className="text-sm font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+            <Calendar className="w-4 h-4 text-slate-700 dark:text-slate-300" />
             <span>Jadwal Sesi Mentoring Aktif ({mentorBookings.length})</span>
           </h3>
 
@@ -77,7 +77,7 @@ export const MentorHub: React.FC = () => {
               >
                 <div className="space-y-1">
                   <div className="text-xs font-bold text-slate-900 dark:text-white">{b.mentorName}</div>
-                  <div className="text-[11px] text-indigo-600 dark:text-indigo-400 font-semibold flex items-center gap-2">
+                  <div className="text-[11px] text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2">
                     <Clock className="w-3 h-3" />
                     <span>{b.date} • {b.timeSlot}</span>
                   </div>
@@ -109,7 +109,7 @@ export const MentorHub: React.FC = () => {
           {mentors.map((mentor) => (
             <div
               key={mentor.id}
-              className="bg-white dark:bg-[#101728] rounded-3xl p-6 border border-slate-200 dark:border-[#1E2940] shadow-sm dark:shadow-xl hover:border-indigo-500/50 transition-all flex flex-col justify-between"
+              className="bg-white dark:bg-[#101728] rounded-3xl p-6 border border-slate-200 dark:border-[#1E2940] shadow-sm dark:shadow-xl hover:border-slate-500/50 transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Mentor Avatar & Role */}
@@ -117,11 +117,11 @@ export const MentorHub: React.FC = () => {
                   <img
                     src={mentor.avatar}
                     alt={mentor.name}
-                    className="w-14 h-14 rounded-2xl object-cover ring-2 ring-indigo-500/40"
+                    className="w-14 h-14 rounded-2xl object-cover ring-2 ring-slate-400 dark:ring-slate-600"
                   />
                   <div>
                     <h4 className="font-extrabold text-sm text-slate-900 dark:text-white">{mentor.name}</h4>
-                    <p className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold">{mentor.role_title}</p>
+                    <p className="text-xs text-slate-700 dark:text-slate-300 font-semibold">{mentor.role_title}</p>
                     <div className="text-[11px] text-slate-500 dark:text-slate-400">{mentor.company}</div>
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export const MentorHub: React.FC = () => {
 
                 <button
                   onClick={() => handleOpenBooking(mentor)}
-                  className="px-4 py-2 bg-[#5438FF] hover:bg-[#462bf3] text-white font-bold text-xs rounded-xl shadow-md shadow-[#5438FF]/30 transition-colors flex items-center gap-1.5 cursor-pointer"
+                  className="px-4 py-2 bg-[#2D333F] hover:bg-[#20242D] text-white font-bold text-xs rounded-xl shadow-md shadow-black/20 transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
                   <Video className="w-3.5 h-3.5" />
                   <span>Jadwalkan</span>
@@ -199,7 +199,7 @@ export const MentorHub: React.FC = () => {
                 </p>
                 <button
                   onClick={() => setSelectedMentor(null)}
-                  className="px-6 py-2.5 bg-[#5438FF] text-white font-bold text-xs rounded-xl hover:bg-[#462bf3] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-[#2D333F] text-white font-bold text-xs rounded-xl hover:bg-[#20242D] transition-colors cursor-pointer"
                 >
                   Selesai
                 </button>
@@ -231,7 +231,7 @@ export const MentorHub: React.FC = () => {
                         onClick={() => setSelectedSlot(slot)}
                         className={`p-2.5 rounded-xl border text-xs font-semibold text-left transition-colors cursor-pointer ${
                           selectedSlot === slot
-                            ? 'bg-indigo-50 dark:bg-[#5438FF]/20 border-[#5438FF] text-indigo-900 dark:text-white'
+                            ? 'bg-slate-200 dark:bg-slate-800 border-slate-500 text-slate-900 dark:text-white font-bold'
                             : 'border-slate-200 dark:border-[#22304A] hover:bg-slate-50 dark:hover:bg-[#141C30] text-slate-700 dark:text-slate-300'
                         }`}
                       >
@@ -250,7 +250,7 @@ export const MentorHub: React.FC = () => {
                     placeholder="Contoh: Diskusi arsitektur pipeline data, review resume, atau tips interview teknis."
                     value={bookingNotes}
                     onChange={(e) => setBookingNotes(e.target.value)}
-                    className="w-full p-3 bg-slate-50 dark:bg-[#141C30] border border-slate-200 dark:border-[#22304A] rounded-xl text-xs text-slate-900 dark:text-white focus:outline-hidden focus:border-indigo-500"
+                    className="w-full p-3 bg-slate-50 dark:bg-[#141C30] border border-slate-200 dark:border-[#22304A] rounded-xl text-xs text-slate-900 dark:text-white focus:outline-hidden focus:border-slate-500"
                   />
                 </div>
 
@@ -264,7 +264,7 @@ export const MentorHub: React.FC = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 rounded-xl bg-[#5438FF] hover:bg-[#462bf3] text-white font-bold text-xs shadow-md shadow-[#5438FF]/30 cursor-pointer"
+                    className="px-5 py-2 rounded-xl bg-[#2D333F] hover:bg-[#20242D] text-white font-bold text-xs shadow-md shadow-black/20 cursor-pointer"
                   >
                     Konfirmasi Booking
                   </button>

@@ -44,10 +44,10 @@ export const CertificateModal: React.FC = () => {
         {/* Certificate Printable Canvas (matching bottom-right mockup) */}
         <div
           ref={certRef}
-          className="relative bg-white text-slate-800 p-8 sm:p-12 text-center overflow-hidden flex flex-col items-center justify-between min-h-[460px] border-8 border-indigo-50/70"
+          className="relative bg-white text-slate-800 p-8 sm:p-12 text-center overflow-hidden flex flex-col items-center justify-between min-h-[460px] border-8 border-slate-200"
         >
           {/* Top Wavy Scallop Header Background matching mockup */}
-          <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-800 pointer-events-none">
+          <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-r from-[#242A38] via-[#2F3647] to-[#1E232F] pointer-events-none">
             {/* Scallop wave curve overlay */}
             <svg
               className="absolute bottom-0 w-full text-white"
@@ -59,8 +59,8 @@ export const CertificateModal: React.FC = () => {
 
             {/* Confetti / stars shapes */}
             <div className="absolute top-4 left-10 w-2.5 h-2.5 rounded-full bg-amber-300 opacity-70 animate-pulse" />
-            <div className="absolute top-10 right-16 w-3 h-3 rotate-45 bg-pink-300 opacity-60" />
-            <div className="absolute top-12 left-1/4 w-2 h-4 rotate-12 bg-sky-300 opacity-60" />
+            <div className="absolute top-10 right-16 w-3 h-3 rotate-45 bg-amber-400 opacity-60" />
+            <div className="absolute top-12 left-1/4 w-2 h-4 rotate-12 bg-slate-300 opacity-60" />
             <div className="absolute top-6 right-1/4 w-3 h-3 rounded-full bg-amber-400 opacity-70" />
           </div>
 
@@ -91,7 +91,7 @@ export const CertificateModal: React.FC = () => {
               Diberikan kepada:
             </p>
 
-            <div className="text-2xl sm:text-3xl font-black text-indigo-900 font-serif tracking-wide border-b-2 border-indigo-100 pb-2">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 font-serif tracking-wide border-b-2 border-slate-300 pb-2">
               {currentUser.full_name}
             </div>
 
@@ -114,7 +114,7 @@ export const CertificateModal: React.FC = () => {
 
             {/* Signature Area */}
             <div className="text-center">
-              <div className="font-serif italic text-base text-indigo-950 font-bold tracking-wider mb-1">
+              <div className="font-serif italic text-base text-slate-900 font-bold tracking-wider mb-1">
                 {certificateCourse.instructor_name.split(',')[0]}
               </div>
               <div className="w-24 h-0.5 bg-slate-300 mx-auto mb-1" />
@@ -123,11 +123,13 @@ export const CertificateModal: React.FC = () => {
 
             {/* Logo Lockup */}
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-xs">
-                ▲
-              </div>
+              <img
+                src="/assets/aistudio/skillup_logo_clean.png"
+                alt="SKILLUP Logo"
+                className="h-8 w-auto object-contain drop-shadow-sm"
+              />
               <div className="text-left leading-none">
-                <span className="font-extrabold text-sm tracking-tight text-indigo-900">
+                <span className="font-extrabold text-sm tracking-tight text-slate-900">
                   SKILLUP
                 </span>
                 <span className="text-[9px] block text-slate-400">Verified Certificate</span>
@@ -146,7 +148,7 @@ export const CertificateModal: React.FC = () => {
           <div className="flex items-center gap-2.5">
             <button
               onClick={handlePrint}
-              className="px-4 py-2.5 rounded-xl border border-slate-200 hover:bg-white text-slate-700 font-bold text-xs flex items-center gap-1.5 transition-colors shadow-xs"
+              className="px-4 py-2.5 rounded-xl border border-slate-200 hover:bg-white text-slate-700 font-bold text-xs flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Cetak</span>
@@ -158,7 +160,7 @@ export const CertificateModal: React.FC = () => {
                 handleTriggerConfetti();
                 handlePrint();
               }}
-              className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs flex items-center gap-2 transition-colors shadow-md shadow-indigo-200"
+              className="px-5 py-2.5 rounded-xl bg-[#2D333F] hover:bg-[#20242D] text-white font-bold text-xs flex items-center gap-2 transition-colors shadow-md shadow-black/20 cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Download Sertifikat</span>

@@ -45,7 +45,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
       case 'react':
         return (
           <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#1C2337] flex items-center justify-center p-2.5 transition-transform group-hover:scale-105 border border-slate-200 dark:border-[#2B3857]">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-mono font-bold text-base shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-[#2D333F] flex items-center justify-center text-white font-mono font-bold text-base shadow-sm">
               {'</>'}
             </div>
           </div>
@@ -54,16 +54,16 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         return (
           <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#1C2337] flex items-center justify-center p-2.5 transition-transform group-hover:scale-105 border border-slate-200 dark:border-[#2B3857]">
             <div className="flex items-end gap-1.5 h-8">
-              <div className="w-2.5 h-3.5 bg-blue-400 rounded-t-sm" />
-              <div className="w-2.5 h-5.5 bg-blue-500 rounded-t-sm" />
-              <div className="w-2.5 h-7.5 bg-indigo-500 rounded-t-sm" />
+              <div className="w-2.5 h-3.5 bg-slate-400 rounded-t-sm" />
+              <div className="w-2.5 h-5.5 bg-slate-600 rounded-t-sm" />
+              <div className="w-2.5 h-7.5 bg-[#2D333F] rounded-t-sm" />
             </div>
           </div>
         );
       case 'design':
         return (
           <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#1C2337] flex items-center justify-center p-2.5 transition-transform group-hover:scale-105 border border-slate-200 dark:border-[#2B3857]">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-sm">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center text-white shadow-sm">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
               </svg>
@@ -86,7 +86,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   return (
     <div
       onClick={() => openClassroom(course.id)}
-      className="group bg-white dark:bg-[#101728] rounded-3xl p-5 border border-slate-200 dark:border-[#1E2940] shadow-sm hover:shadow-lg dark:shadow-xl hover:border-indigo-500/60 dark:hover:border-indigo-500/60 hover:bg-slate-50/50 dark:hover:bg-[#131D33] transition-all duration-300 flex flex-col justify-between cursor-pointer relative"
+      className="group bg-white dark:bg-[#101728] rounded-3xl p-5 border border-slate-200 dark:border-[#1E2940] shadow-sm hover:shadow-lg dark:shadow-xl hover:border-slate-500 dark:hover:border-slate-500 hover:bg-slate-50/50 dark:hover:bg-[#131D33] transition-all duration-300 flex flex-col justify-between cursor-pointer relative"
     >
       <div>
         {/* Top Header: Bookmark & Rating */}
@@ -110,18 +110,18 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               }}
               className={`p-1.5 rounded-xl border transition-colors cursor-pointer ${
                 isBookmarked
-                  ? 'bg-indigo-50 border-indigo-300 text-indigo-600 dark:bg-indigo-600/30 dark:border-indigo-500 dark:text-indigo-400'
+                  ? 'bg-slate-200 border-slate-400 text-slate-800 dark:bg-slate-700/60 dark:border-slate-500 dark:text-slate-200'
                   : 'bg-slate-50 border-slate-200 text-slate-400 hover:text-slate-700 dark:bg-[#151D2F] dark:border-[#222E46] dark:text-slate-400 dark:hover:text-white'
               }`}
               title={isBookmarked ? 'Hapus dari Simpanan' : 'Simpan Kursus'}
             >
-              <Bookmark className={`w-3.5 h-3.5 ${isBookmarked ? 'fill-indigo-600 dark:fill-indigo-400' : ''}`} />
+              <Bookmark className={`w-3.5 h-3.5 ${isBookmarked ? 'fill-slate-800 dark:fill-slate-200' : ''}`} />
             </button>
           </div>
         </div>
 
         {/* Course Title */}
-        <h3 className="font-extrabold text-base text-slate-900 dark:text-white group-hover:text-[#5438FF] transition-colors line-clamp-1 mb-1.5">
+        <h3 className="font-extrabold text-base text-slate-900 dark:text-white group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors line-clamp-1 mb-1.5">
           {course.title}
         </h3>
 
@@ -144,12 +144,12 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               <span className="font-semibold text-slate-500 dark:text-slate-400">
                 {progress.percentage === 100 ? '🎉 Selesai' : `Progress: ${progress.done}/${progress.total} materi`}
               </span>
-              <span className="font-bold text-indigo-600 dark:text-indigo-400">{progress.percentage}%</span>
+              <span className="font-bold text-slate-900 dark:text-slate-200">{progress.percentage}%</span>
             </div>
             <div className="w-full h-1.5 bg-slate-100 dark:bg-[#1C263D] rounded-full overflow-hidden">
               <div
                 className={`h-full transition-all duration-500 ${
-                  progress.percentage === 100 ? 'bg-emerald-500' : 'bg-[#5438FF]'
+                  progress.percentage === 100 ? 'bg-emerald-500' : 'bg-[#2D333F]'
                 }`}
                 style={{ width: `${progress.percentage}%` }}
               />
@@ -171,7 +171,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               e.stopPropagation();
               openClassroom(course.id);
             }}
-            className="w-9 h-9 rounded-full bg-[#5438FF] hover:bg-[#462bf3] text-white flex items-center justify-center shadow-md shadow-[#5438FF]/30 group-hover:scale-110 transition-transform cursor-pointer"
+            className="w-9 h-9 rounded-full bg-[#2D333F] hover:bg-[#20242D] text-white flex items-center justify-center shadow-md shadow-black/20 group-hover:scale-110 transition-transform cursor-pointer"
             title="Buka Kelas"
           >
             <Play className="w-4 h-4 fill-white ml-0.5" />

@@ -28,7 +28,7 @@ export const CertificatesView: React.FC = () => {
               key={course.id}
               className={`rounded-3xl p-6 border transition-all flex flex-col justify-between ${
                 isEligible
-                  ? 'bg-white dark:bg-[#101728] border-indigo-200 dark:border-indigo-500/50 shadow-sm dark:shadow-xl'
+                  ? 'bg-white dark:bg-[#101728] border-slate-300 dark:border-slate-700 shadow-sm dark:shadow-xl'
                   : 'bg-slate-50 dark:bg-[#0E1424] border-slate-200 dark:border-[#1C273C] shadow-xs opacity-75'
               }`}
             >
@@ -69,7 +69,7 @@ export const CertificatesView: React.FC = () => {
                 {isEligible ? (
                   <button
                     onClick={() => openCertificate(course)}
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#5438FF] hover:bg-[#462bf3] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#2D333F] hover:bg-[#20242D] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-black/20 transition-colors cursor-pointer"
                   >
                     <Award className="w-4 h-4 fill-white" />
                     <span>Buka Sertifikat Kelulusan</span>

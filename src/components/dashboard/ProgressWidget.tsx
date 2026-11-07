@@ -48,7 +48,7 @@ export const ProgressWidget: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('rencana')}
-          className="text-xs font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 flex items-center gap-1 group transition-colors cursor-pointer"
+          className="text-xs font-bold text-slate-800 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white flex items-center gap-1 group transition-colors cursor-pointer"
         >
           <span>Lihat Detail</span>
           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -74,8 +74,8 @@ export const ProgressWidget: React.FC = () => {
               {/* Active Progress Circle with Gradient */}
               <defs>
                 <linearGradient id="progressGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#5438FF" />
-                  <stop offset="100%" stopColor="#38BDF8" />
+                  <stop offset="0%" stopColor="#374151" />
+                  <stop offset="100%" stopColor="#94A3B8" />
                 </linearGradient>
               </defs>
               <circle
@@ -106,8 +106,8 @@ export const ProgressWidget: React.FC = () => {
         <div className="sm:col-span-7 space-y-3.5">
           {/* Tile 1: Kursus Diikuti */}
           <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-50 dark:bg-[#141C30] border border-slate-200/80 dark:border-[#1E2940] hover:bg-slate-100 dark:hover:bg-[#18233C] transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-950/80 dark:text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-100 dark:border-indigo-800/40">
-              <Play className="w-4 h-4 fill-indigo-600 dark:fill-indigo-400 ml-0.5" />
+            <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+              <Play className="w-4 h-4 fill-slate-800 dark:fill-slate-200 ml-0.5" />
             </div>
             <div>
               <div className="text-base font-extrabold text-slate-900 dark:text-white leading-none">
@@ -139,7 +139,7 @@ export const ProgressWidget: React.FC = () => {
               <div className="text-base font-extrabold text-slate-900 dark:text-white leading-none">
                 48 <span className="text-xs font-normal text-slate-500 dark:text-slate-400">Jam</span>
               </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Total Waktu Belajar</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Total Jam Belajar</div>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ export const ProgressWidget: React.FC = () => {
         <div className="flex items-center justify-between mb-3 text-xs">
           <span className="font-bold text-slate-900 dark:text-white">Aktivitas Mingguan</span>
           <span className="text-slate-500 dark:text-slate-400 font-medium">
-            Hari ini: <strong className="text-indigo-600 dark:text-indigo-400">{weeklyData[activeDayIndex].hours} jam belajar</strong>
+            Hari ini: <strong className="text-slate-900 dark:text-slate-200">{weeklyData[activeDayIndex].hours} jam belajar</strong>
           </span>
         </div>
 
@@ -159,8 +159,8 @@ export const ProgressWidget: React.FC = () => {
           <svg className="w-full h-full overflow-visible" viewBox="0 0 350 80" preserveAspectRatio="none">
             <defs>
               <linearGradient id="chartGradientTheme" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#5438FF" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#5438FF" stopOpacity="0.0" />
+                <stop offset="0%" stopColor="#4B5563" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#4B5563" stopOpacity="0.0" />
               </linearGradient>
             </defs>
 
@@ -177,7 +177,7 @@ export const ProgressWidget: React.FC = () => {
             <path
               d="M 10 65 Q 60 55, 110 50 T 210 35 T 310 18"
               fill="none"
-              stroke="#5438FF"
+              stroke="#4B5563"
               strokeWidth="3.5"
               strokeLinecap="round"
             />
@@ -191,13 +191,13 @@ export const ProgressWidget: React.FC = () => {
               { cx: 210, cy: 35, idx: 4 },
               { cx: 260, cy: 26, idx: 5 },
               { cx: 310, cy: 18, idx: 6 },
-            ].map(pt => (
+            ].map((pt) => (
               <g key={pt.idx} className="cursor-pointer" onClick={() => setActiveDayIndex(pt.idx)}>
                 <circle
                   cx={pt.cx}
                   cy={pt.cy}
                   r={activeDayIndex === pt.idx ? '6' : '4'}
-                  fill={activeDayIndex === pt.idx ? '#818CF8' : '#5438FF'}
+                  fill={activeDayIndex === pt.idx ? '#9CA3AF' : '#4B5563'}
                   stroke="#ffffff"
                   strokeWidth="2.5"
                   className="transition-all hover:scale-125"
@@ -207,7 +207,7 @@ export const ProgressWidget: React.FC = () => {
                     x={pt.cx}
                     y={pt.cy - 10}
                     textAnchor="middle"
-                    className="fill-indigo-600 dark:fill-[#A5B4FC]"
+                    className="fill-slate-800 dark:fill-slate-200"
                     fontSize="10"
                     fontWeight="bold"
                   >
@@ -227,7 +227,7 @@ export const ProgressWidget: React.FC = () => {
               onClick={() => setActiveDayIndex(i)}
               className={`py-1 px-2.5 rounded-lg transition-colors cursor-pointer ${
                 activeDayIndex === i
-                  ? 'bg-[#5438FF] text-white font-bold shadow-md shadow-[#5438FF]/30'
+                  ? 'bg-[#2D333F] text-white font-bold shadow-md shadow-black/20'
                   : 'hover:text-slate-900 hover:bg-slate-100 dark:hover:text-white dark:hover:bg-[#151D2F]'
               }`}
             >

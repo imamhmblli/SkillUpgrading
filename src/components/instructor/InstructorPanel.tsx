@@ -109,22 +109,22 @@ export const InstructorPanel: React.FC = () => {
   return (
     <div className="space-y-8 pb-12">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-purple-800 via-indigo-900 to-slate-900 rounded-3xl p-7 text-white shadow-xl">
+      <div className="bg-gradient-to-r from-[#242A38] via-[#2F3647] to-[#1E232F] rounded-3xl p-7 text-white shadow-xl border border-slate-700/50">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-purple-300">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
               {currentUser.role === 'admin' ? 'Administrator Console' : 'Instructor Management Portal'}
             </span>
             <h2 className="text-2xl font-extrabold tracking-tight mt-1">
               Dashboard Instruktur & Kurikulum
             </h2>
-            <p className="text-xs text-purple-200 mt-1">
+            <p className="text-xs text-slate-200 mt-1">
               Kelola kursus, publikasikan silabus materi, dan evaluasi statistik kelulusan siswa secara komprehensif.
             </p>
           </div>
 
           <div className="flex items-center gap-2 self-start sm:self-auto">
-            <span className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-purple-700/60 border border-purple-400/40 text-purple-100">
+            <span className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-700/60 border border-slate-600/40 text-slate-200">
               👤 {currentUser.full_name} ({currentUser.role})
             </span>
           </div>
@@ -137,7 +137,7 @@ export const InstructorPanel: React.FC = () => {
           onClick={() => setPanelTab('courses')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
             panelTab === 'courses'
-              ? 'bg-[#5438FF] text-white shadow-md shadow-[#5438FF]/30'
+              ? 'bg-[#2D333F] text-white shadow-md shadow-black/20'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-[#131C30]'
           }`}
         >
@@ -149,7 +149,7 @@ export const InstructorPanel: React.FC = () => {
           onClick={() => setPanelTab('create_course')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
             panelTab === 'create_course'
-              ? 'bg-[#5438FF] text-white shadow-md shadow-[#5438FF]/30'
+              ? 'bg-[#2D333F] text-white shadow-md shadow-black/20'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-[#131C30]'
           }`}
         >
@@ -161,7 +161,7 @@ export const InstructorPanel: React.FC = () => {
           onClick={() => setPanelTab('lessons')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
             panelTab === 'lessons'
-              ? 'bg-[#5438FF] text-white shadow-md shadow-[#5438FF]/30'
+              ? 'bg-[#2D333F] text-white shadow-md shadow-black/20'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-[#131C30]'
           }`}
         >
@@ -173,7 +173,7 @@ export const InstructorPanel: React.FC = () => {
           onClick={() => setPanelTab('statistics')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
             panelTab === 'statistics'
-              ? 'bg-[#5438FF] text-white shadow-md shadow-[#5438FF]/30'
+              ? 'bg-[#2D333F] text-white shadow-md shadow-black/20'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-[#131C30]'
           }`}
         >
@@ -191,7 +191,7 @@ export const InstructorPanel: React.FC = () => {
             </h3>
             <button
               onClick={() => setPanelTab('create_course')}
-              className="px-3.5 py-1.5 rounded-xl bg-[#5438FF] text-white text-xs font-bold hover:bg-[#462bf3] transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
+              className="px-3.5 py-1.5 rounded-xl bg-[#2D333F] text-white text-xs font-bold hover:bg-[#20242D] transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
             >
               <PlusCircle className="w-3.5 h-3.5" />
               <span>Tambah Kursus Baru</span>
@@ -207,7 +207,7 @@ export const InstructorPanel: React.FC = () => {
                   className="bg-white dark:bg-[#101728] rounded-3xl p-5 border border-slate-200 dark:border-[#1E2940] shadow-sm dark:shadow-xl flex flex-col justify-between transition-colors"
                 >
                   <div>
-                    <div className="flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-2">
+                    <div className="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">
                       <span className="uppercase">{c.category}</span>
                       <span className="capitalize px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#162035] text-slate-600 dark:text-slate-300">
                         Level: {c.level}
@@ -236,7 +236,7 @@ export const InstructorPanel: React.FC = () => {
                           setSelectedCourseId(c.id);
                           setPanelTab('lessons');
                         }}
-                        className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-[#162035] hover:bg-slate-200 dark:hover:bg-[#1E2A45] text-indigo-700 dark:text-indigo-300 text-xs font-bold transition-colors cursor-pointer"
+                        className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors cursor-pointer"
                       >
                         Kelola Materi
                       </button>
@@ -357,7 +357,7 @@ export const InstructorPanel: React.FC = () => {
             <div className="pt-3">
               <button
                 type="submit"
-                className="w-full py-3 bg-[#5438FF] hover:bg-[#462bf3] text-white font-bold text-xs rounded-xl shadow-md shadow-[#5438FF]/30 transition-colors"
+                className="w-full py-3 bg-[#2D333F] hover:bg-[#20242D] text-white font-bold text-xs rounded-xl shadow-md shadow-black/20 transition-colors cursor-pointer"
               >
                 Buat Kursus Sekarang
               </button>
@@ -410,7 +410,7 @@ export const InstructorPanel: React.FC = () => {
                           Durasi: {l.duration_minutes} menit
                         </span>
                       </div>
-                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-[#5438FF]/20 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-[#5438FF]/40">
+                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700">
                         Aktif
                       </span>
                     </div>
@@ -500,7 +500,7 @@ export const InstructorPanel: React.FC = () => {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-2.5 bg-[#5438FF] hover:bg-[#462bf3] text-white font-bold text-xs rounded-xl shadow-md shadow-[#5438FF]/30 transition-colors cursor-pointer"
+                  className="w-full py-2.5 bg-[#2D333F] hover:bg-[#20242D] text-white font-bold text-xs rounded-xl shadow-md shadow-black/20 transition-colors cursor-pointer"
                 >
                   Simpan & Publikasikan Materi
                 </button>
@@ -569,7 +569,7 @@ export const InstructorPanel: React.FC = () => {
                               </span>
                               <div className="w-28 h-2 bg-slate-200 dark:bg-[#1C263D] rounded-full overflow-hidden">
                                 <div
-                                  className={`h-full ${pct === 100 ? 'bg-emerald-500' : 'bg-[#5438FF]'}`}
+                                  className={`h-full ${pct === 100 ? 'bg-emerald-500' : 'bg-[#2D333F]'}`}
                                   style={{ width: `${pct}%` }}
                                 />
                               </div>

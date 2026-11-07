@@ -184,7 +184,7 @@ export const CoursePlayer: React.FC = () => {
             <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2">
               <span>{currentLesson?.title}</span>
               <span>•</span>
-              <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+              <span className="font-semibold text-slate-800 dark:text-slate-200">
                 {completedCount}/{courseLessons.length} Materi Selesai
               </span>
             </div>
@@ -196,7 +196,7 @@ export const CoursePlayer: React.FC = () => {
             onClick={() => toggleBookmark(course.id)}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
               isBookmarked
-                ? 'bg-[#5438FF] text-white shadow-sm'
+                ? 'bg-[#2D333F] text-white shadow-sm'
                 : 'bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-200 dark:bg-[#151E33] dark:border-[#202E4A] dark:text-slate-300 dark:hover:text-white dark:hover:bg-[#1B2742]'
             }`}
           >
@@ -243,7 +243,7 @@ export const CoursePlayer: React.FC = () => {
                   onClick={() => setPlayerMode('code')}
                   className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     playerMode === 'code'
-                      ? 'bg-[#5438FF] text-white shadow-sm'
+                      ? 'bg-[#2D333F] text-white shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-[#162035]'
                   }`}
                 >
@@ -254,7 +254,7 @@ export const CoursePlayer: React.FC = () => {
                   onClick={() => setPlayerMode('video')}
                   className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     playerMode === 'video'
-                      ? 'bg-[#5438FF] text-white shadow-sm'
+                      ? 'bg-[#2D333F] text-white shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-[#162035]'
                   }`}
                 >
@@ -297,7 +297,7 @@ export const CoursePlayer: React.FC = () => {
                   <div className="absolute inset-0 flex items-center justify-center bg-slate-900 text-white">
                     <button
                       onClick={() => setIsPlaying(!isPlaying)}
-                      className="w-16 h-16 rounded-full bg-indigo-600/90 hover:bg-indigo-600 text-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 cursor-pointer"
+                      className="w-16 h-16 rounded-full bg-[#2D333F]/90 hover:bg-[#20242D] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 cursor-pointer"
                     >
                       {isPlaying ? <Pause className="w-8 h-8 fill-white" /> : <Play className="w-8 h-8 fill-white ml-1" />}
                     </button>
@@ -331,7 +331,7 @@ export const CoursePlayer: React.FC = () => {
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 shadow-xs cursor-pointer ${
                   isCurrentLessonCompleted
                     ? 'bg-emerald-500 text-white hover:bg-emerald-600'
-                    : 'bg-[#5438FF] text-white hover:bg-[#462bf3]'
+                    : 'bg-[#2D333F] text-white hover:bg-[#20242D]'
                 }`}
               >
                 {isCurrentLessonCompleted ? (
@@ -367,7 +367,7 @@ export const CoursePlayer: React.FC = () => {
                 onClick={() => setActiveTab('materi')}
                 className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                   activeTab === 'materi'
-                    ? 'bg-[#5438FF] text-white shadow-sm'
+                    ? 'bg-[#2D333F] text-white shadow-sm'
                     : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >
@@ -377,8 +377,8 @@ export const CoursePlayer: React.FC = () => {
                 onClick={() => setActiveTab('diskusi')}
                 className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all relative ${
                   activeTab === 'diskusi'
-                    ? 'bg-[#5438FF] text-white shadow-sm'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#2D333F] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >
                 Diskusi
@@ -387,8 +387,8 @@ export const CoursePlayer: React.FC = () => {
                 onClick={() => setActiveTab('quiz')}
                 className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all ${
                   activeTab === 'quiz'
-                    ? 'bg-[#5438FF] text-white shadow-sm'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#2D333F] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >
                 Quiz
@@ -400,7 +400,7 @@ export const CoursePlayer: React.FC = () => {
               <div className="space-y-2">
                 <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-1 flex items-center justify-between">
                   <span>Daftar Materi Pembelajaran</span>
-                  <span className="text-indigo-400 font-bold">
+                  <span className="text-slate-800 dark:text-slate-200 font-bold">
                     {Math.round((completedCount / courseLessons.length) * 100)}%
                   </span>
                 </div>
@@ -423,7 +423,7 @@ export const CoursePlayer: React.FC = () => {
                       }}
                       className={`w-full text-left p-3.5 rounded-2xl border transition-all flex items-center justify-between gap-3 cursor-pointer ${
                         isCurrent
-                          ? 'bg-indigo-50 border-[#5438FF] text-indigo-900 font-bold dark:bg-[#5438FF]/20 dark:border-[#5438FF] dark:text-white shadow-xs'
+                          ? 'bg-slate-200 border-slate-500 text-slate-900 font-bold dark:bg-slate-800 dark:border-slate-600 dark:text-white shadow-xs'
                           : 'bg-slate-50 border-slate-200 hover:bg-slate-100 text-slate-700 dark:bg-[#141C30] dark:border-[#1E2940] dark:hover:bg-[#18233C] dark:text-slate-300'
                       }`}
                     >
@@ -433,7 +433,7 @@ export const CoursePlayer: React.FC = () => {
                             isDone
                               ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-950/80 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-600/40'
                               : isCurrent
-                              ? 'bg-[#5438FF] text-white'
+                              ? 'bg-[#2D333F] text-white'
                               : 'bg-slate-200 dark:bg-[#090D16] text-slate-500'
                           }`}
                         >
@@ -489,15 +489,15 @@ export const CoursePlayer: React.FC = () => {
                 </div>
 
                 {/* Mentor Quick Info */}
-                <div className="p-3 rounded-2xl bg-indigo-50 dark:bg-[#141C30] border border-indigo-100 dark:border-[#1E2940] flex items-center gap-3">
+                <div className="p-3 rounded-2xl bg-slate-100 dark:bg-[#1E2533] border border-slate-200 dark:border-slate-700/60 flex items-center gap-3">
                   <img
                     src={course.instructor_avatar}
                     alt={course.instructor_name}
-                    className="w-10 h-10 rounded-xl object-cover ring-2 ring-indigo-200 dark:ring-indigo-500/30"
+                    className="w-10 h-10 rounded-xl object-cover ring-2 ring-slate-300 dark:ring-slate-600"
                   />
                   <div>
                     <div className="text-xs font-bold text-slate-900 dark:text-white">{course.instructor_name}</div>
-                    <div className="text-[11px] text-indigo-600 dark:text-indigo-400 font-semibold">Mentor Utama Kursus</div>
+                    <div className="text-[11px] text-slate-700 dark:text-slate-300 font-semibold">Mentor Utama Kursus</div>
                   </div>
                 </div>
 
@@ -510,7 +510,7 @@ export const CoursePlayer: React.FC = () => {
                         key={msg.id}
                         className={`p-3 rounded-2xl text-xs leading-relaxed ${
                           msg.is_mentor_reply
-                            ? 'bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800/40 text-purple-950 dark:text-purple-200'
+                            ? 'bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100'
                             : 'bg-slate-50 dark:bg-[#131C30] border border-slate-200 dark:border-[#1E2940] text-slate-800 dark:text-slate-200'
                         }`}
                       >
@@ -518,7 +518,7 @@ export const CoursePlayer: React.FC = () => {
                           <span className="font-bold flex items-center gap-1.5 text-slate-900 dark:text-white">
                             {msg.user_name}
                             {msg.is_mentor_reply && (
-                              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-purple-200 dark:bg-purple-800 text-purple-800 dark:text-purple-200">
+                              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
                                 Mentor
                               </span>
                             )}
@@ -538,13 +538,13 @@ export const CoursePlayer: React.FC = () => {
                       placeholder="Tanyakan kebingunganmu ke mentor..."
                       value={commentText}
                       onChange={(e) => setCommentText(e.target.value)}
-                      className="w-full p-3 bg-slate-50 dark:bg-[#101728] border border-slate-200 dark:border-[#1E2940] rounded-xl text-xs text-slate-800 dark:text-white placeholder-slate-400 focus:outline-hidden focus:border-indigo-500"
+                      className="w-full p-3 bg-slate-50 dark:bg-[#101728] border border-slate-200 dark:border-[#1E2940] rounded-xl text-xs text-slate-800 dark:text-white placeholder-slate-400 focus:outline-hidden focus:border-slate-500"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={!commentText.trim()}
-                    className="w-full py-2 bg-[#5438FF] hover:bg-[#462bf3] disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full py-2 bg-[#2D333F] hover:bg-[#20242D] disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Kirim Pertanyaan</span>
@@ -600,7 +600,7 @@ export const CoursePlayer: React.FC = () => {
                                   stateClass = 'bg-rose-100 dark:bg-rose-950/60 border-rose-400 dark:border-rose-600 text-rose-900 dark:text-rose-300';
                                 }
                               } else if (isSelected) {
-                                stateClass = 'bg-indigo-50 dark:bg-indigo-950/60 border-indigo-400 dark:border-indigo-500 text-indigo-900 dark:text-indigo-300 font-semibold';
+                                stateClass = 'bg-slate-200 dark:bg-slate-800 border-slate-400 dark:border-slate-500 text-slate-900 dark:text-white font-semibold';
                               }
 
                               return (
@@ -638,7 +638,7 @@ export const CoursePlayer: React.FC = () => {
                           disabled={
                             Object.keys(selectedAnswers).length < courseQuiz.questions.length
                           }
-                          className="w-full py-2.5 rounded-xl bg-[#5438FF] hover:bg-[#462bf3] disabled:opacity-50 text-white font-bold text-xs shadow-sm transition-colors cursor-pointer"
+                          className="w-full py-2.5 rounded-xl bg-[#2D333F] hover:bg-[#20242D] disabled:opacity-50 text-white font-bold text-xs shadow-sm transition-colors cursor-pointer"
                         >
                           Periksa Jawaban Kuis
                         </button>

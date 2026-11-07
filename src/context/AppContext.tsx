@@ -105,6 +105,10 @@ interface AppContextType {
   setShowQrModal: (open: boolean) => void;
   theme: 'dark' | 'light';
   toggleTheme: () => void;
+  sidebarWidth: number;
+  setSidebarWidth: (width: number) => void;
+  isSidebarCollapsed: boolean;
+  toggleSidebarCollapse: () => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -131,6 +135,34 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       document.documentElement.classList.remove('dark');
     }
   }, [theme]);
+
+  // Flexible resizable sidebar width state with persistence
+  const [sidebarWidth, setSidebarWidthState] = useState<number>(() => {
+    const saved = localStorage.getItem('skillup_sidebar_width');
+    if (saved) {
+      const parsed = parseInt(saved, 10);
+      if (!isNaN(parsed) && parsed >= 72 && parsed <= 450) {
+        return parsed;
+      }
+    }
+    return 270;
+  });
+
+  const setSidebarWidth = (w: number) => {
+    const clamped = Math.max(72, Math.min(450, w));
+    setSidebarWidthState(clamped);
+    localStorage.setItem('skillup_sidebar_width', clamped.toString());
+  };
+
+  const isSidebarCollapsed = sidebarWidth < 120;
+
+  const toggleSidebarCollapse = () => {
+    if (isSidebarCollapsed) {
+      setSidebarWidth(270);
+    } else {
+      setSidebarWidth(76);
+    }
+  };
 
   // Current user state (Default to admin as in screenshot, or saved role)
   const [currentRole, setCurrentRole] = useState<UserRole>(() => {
@@ -549,7 +581,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         showQrModal,
         setShowQrModal,
         theme,
-        toggleTheme
+        toggleTheme,
+        sidebarWidth,
+        setSidebarWidth,
+        isSidebarCollapsed,
+        toggleSidebarCollapse
       }}
     >
       {children}

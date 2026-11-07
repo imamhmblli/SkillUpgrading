@@ -64,7 +64,7 @@ export const InteractiveCodeEditor: React.FC<InteractiveCodeEditorProps> = ({
           <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
             main.{language === 'python' ? 'py' : 'sql'}
           </span>
-          <span className="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-indigo-300 font-semibold">
+          <span className="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 font-semibold">
             Interactive Sandbox
           </span>
         </div>
@@ -87,7 +87,7 @@ export const InteractiveCodeEditor: React.FC<InteractiveCodeEditorProps> = ({
           <button
             onClick={handleRunCode}
             disabled={isRunning}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white font-bold rounded-lg transition-all shadow-sm shadow-indigo-900/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-[#2D333F] hover:bg-[#3B4252] disabled:opacity-50 text-white font-bold rounded-lg transition-all shadow-md shadow-black/30 cursor-pointer"
           >
             <Play className={`w-3.5 h-3.5 fill-white ${isRunning ? 'animate-spin' : ''}`} />
             <span>{isRunning ? 'Menjalankan...' : 'Jalankan'}</span>
@@ -120,7 +120,7 @@ export const InteractiveCodeEditor: React.FC<InteractiveCodeEditorProps> = ({
       {output && (
         <div className="bg-[#090D13] border-t border-slate-800 p-4">
           <div className="flex items-center gap-2 text-[11px] font-bold text-slate-400 mb-2">
-            <Terminal className="w-3.5 h-3.5 text-indigo-400" />
+            <Terminal className="w-3.5 h-3.5 text-slate-400" />
             <span>Output Konsol:</span>
           </div>
           <pre className="text-emerald-400 whitespace-pre-wrap font-mono text-xs leading-relaxed max-h-40 overflow-y-auto">
